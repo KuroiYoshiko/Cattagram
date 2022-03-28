@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".mainpage.MainPageActivity">
 
-    <include
-        layout="@layout/fragment_main_page"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainPageContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
