@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffff"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".login.LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@drawable/fragment_login_bg"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        tools:context=".login.LoginFragment">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="82dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="148dp"
+            android:layout_height="match_parent"
+            android:text="@string/name_account"
+            android:gravity="bottom"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:backgroundTint="@color/ligthblue"
+            android:gravity="center"
+            app:icon="@drawable/ic_like"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="483dp"
+        android:background="@drawable/fragment_login_bg"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        tools:context=".login.LoginFragment">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/lapa" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fragment_login_bg"
+        android:orientation="horizontal"
+        tools:context=".login.LoginFragment">
+
+        <Button
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="@color/ligthblue"
+            android:gravity="center"
+            app:icon="@drawable/ic_like"
+            />
+        <Button
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="@color/ligthblue"
+            android:gravity="center"
+            app:icon="@drawable/ic_com"
+            />
+        <Button
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="100dp"
+            android:backgroundTint="@color/ligthblue"
+            android:gravity="center"
+            app:icon="@drawable/ic_link"
+            />
+
+        <Button
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="@color/ligthblue"
+            android:gravity="center"
+            app:icon="@drawable/ic_catinfo"
+            />
+    </LinearLayout>
+    </LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffff"
+    android:orientation="vertical"
+    tools:context=".login.LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@drawable/fragment_login_bg"
+        android:orientation="horizontal"
+        tools:context=".login.LoginFragment">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="82dp"
+            android:layout_height="76dp"
+            android:layout_weight="0"
+            android:src="@drawable/logo_kot" />
+
+    </LinearLayout>
+
+</LinearLayout>
