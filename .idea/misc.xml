@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/activity_splash.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_main_page.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/frame_news.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/menu_bottom.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/menu_top.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Kuroi_LT/Desktop/Cattagram/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.252" />
         <entry key="..\:/Users/Kuroi_LT/Desktop/Cattagram/app/src/main/res/drawable/ic_launcher_background.xml" value="0.252" />
         <entry key="..\:/Users/Kuroi_LT/Desktop/Cattagram/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />

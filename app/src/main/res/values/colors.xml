@@ -10,5 +10,6 @@
     <color name="cat">#3F51B5</color>
     <color name="ligthblue">#91E9FF</color>
     <color name="orange">#CA841E</color>
+    <color name="transparent">#0000</color>
 
 </resources>
