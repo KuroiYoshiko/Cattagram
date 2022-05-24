@@ -71,8 +71,19 @@
         android:hint="@string/confirm_password"
         android:textColor="@color/cat"
         android:textSize="24sp" />
+    <EditText
+        android:id="@+id/etBirthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="16dp"
+        android:inputType="date"
+        android:hint="@string/birthdate_et"
+        android:textColor="@color/cat"
+        android:textSize="24sp" />
 
     <Button
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_btn_msg"/>

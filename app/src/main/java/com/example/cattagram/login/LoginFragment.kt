@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -89,31 +90,34 @@ class LoginFragment : Fragment() {
 
         _binding!!.btnLogin.setOnClickListener {
             val retrofit = loginRequest()
-                val username = _binding!!.etEmail.text.toString()
-                val password = _binding!!.etPassword.text.toString()
-                val requestBody: RequestBody = MultipartBody.Builder()
-                    .setType(MultipartBody.FORM)
-                    .addFormDataPart("username", username)
-                    .addFormDataPart("password", password)
-                    .build()
+            val username = _binding!!.etEmail.text.toString()
+            val password = _binding!!.etPassword.text.toString()
+            val requestBody: RequestBody = MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("username", username)
+                .addFormDataPart("password", password)
+                .build()
 
-                retrofit?.loginRequest(requestBody)?.enqueue(object : Callback<ResponseBody> {
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        val responseBodyString = response.body()!!.string()
+            retrofit?.loginRequest(requestBody)?.enqueue(object : Callback<ResponseBody> {
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    val responseBodyString = response.body()!!.string()
+                    Log.d("ResponseLogin", "$responseBodyString, $response")
 
-                        if (responseBodyString=="null") {
-                            Toast.makeText(activity, "Wrong username and/or password", Toast.LENGTH_SHORT).show()
-                        }
-                        else if (responseBodyString == "[128]") {
+                    if (responseBodyString=="null") {
+                        Toast.makeText(activity, "Wrong username and/or password", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        val responseNumber = responseBodyString.drop(1).dropLast(1).toInt()
+                        if (responseNumber > 0) {
                             startActivity(Intent(activity, MainPageActivity::class.java))
                             requireActivity().finish()
                         }
-
                     }
+                }
 
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        Toast.makeText(activity, "Server problems, try again later", Toast.LENGTH_SHORT).show()
-                    }
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Toast.makeText(activity, "Server problems, try again later", Toast.LENGTH_SHORT).show()
+                }
             })
 
         }
