@@ -8,10 +8,9 @@
     tools:context=".splashscreen.SplashActivity">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="207dp"
-        android:layout_height="359dp"
-        android:padding="10dp"
-        android:src="@drawable/kot1"
+        android:layout_width="1000dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/kot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

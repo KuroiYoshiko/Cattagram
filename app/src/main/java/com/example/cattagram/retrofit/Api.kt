@@ -10,8 +10,5 @@ import retrofit2.http.Part
 
 interface Api {
     @POST("user/login")
-/*    fun LoginRequest(
-        @Part("username") username: RequestBody,
-        @Part("password") password: RequestBody): Call<ResponseBody>*/
     fun loginRequest(@Body body: RequestBody): Call<ResponseBody>
 }

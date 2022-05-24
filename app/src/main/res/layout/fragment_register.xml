@@ -33,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:inputType="textShortMessage"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:hint="@string/user_name"
@@ -45,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
+        android:inputType="textEmailAddress"
         android:hint="@string/your_email"
         android:textColor="@color/cat"
         android:textSize="24sp" />
@@ -55,6 +57,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:layout_marginBottom="16dp"
+        android:inputType="textPassword"
         android:hint="@string/enter_password"
         android:textColor="@color/cat"
         android:textSize="24sp" />
@@ -65,9 +68,15 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:layout_marginBottom="16dp"
+        android:inputType="textPassword"
         android:hint="@string/confirm_password"
         android:textColor="@color/cat"
         android:textSize="24sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_btn_msg"/>
 
 </LinearLayout>
 

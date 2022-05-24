@@ -15,7 +15,7 @@
     <string name="sing_in">Sing In</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="enter_password">Enter Password</string>
-    <string name="sign_in_with_email">Sign in with Email</string>
+    <string name="sign_in_with_email">Sign in with Username</string>
     <string name="create_account">Create account</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="name_account">Name_account</string>
@@ -26,4 +26,5 @@
     <string name="_0_n_obserwuj">0 \nObserwują</string>
     <string name="_0_n_obserwuje">0 \nObserwuję</string>
     <string name="user_name1">User name</string>
+    <string name="register_btn_msg">Register</string>
 </resources>
