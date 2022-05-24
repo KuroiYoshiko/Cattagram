@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_login_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="26dp"
+    >
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="324dp"
+        android:layout_height="126dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="top"
+        android:src="@drawable/lapa" />
+
+    <TextView
+        android:layout_width="395dp"
+        android:layout_height="61dp"
+        android:gravity="center"
+        android:text="Registration"
+        android:textColor="@color/cat"
+        android:textSize="42sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/etLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:hint="@string/user_name"
+        android:textColor="@color/cat"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:hint="@string/your_email"
+        android:textColor="@color/cat"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/enter_password"
+        android:textColor="@color/cat"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/etPassword2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/confirm_password"
+        android:textColor="@color/cat"
+        android:textSize="24sp" />
+
+</LinearLayout>
+

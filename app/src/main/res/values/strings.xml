@@ -20,4 +20,10 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="name_account">Name_account</string>
     <string name="search">Search</string>
+    <string name="your_email">Your Email</string>
+    <string name="user_name">User Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="_0_n_obserwuj">0 \nObserwują</string>
+    <string name="_0_n_obserwuje">0 \nObserwuję</string>
+    <string name="user_name1">User name</string>
 </resources>
