@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.cattagram.databinding.FragmentLoginBinding
 import com.example.cattagram.mainpage.MainPageActivity
+import com.example.cattagram.register.RegisterActivity
 import com.example.cattagram.retrofit.Api
 import okhttp3.*
 import retrofit2.Call
@@ -104,7 +105,8 @@ class LoginFragment : Fragment() {
                             Toast.makeText(activity, "Wrong username and/or password", Toast.LENGTH_SHORT).show()
                         }
                         else if (responseBodyString == "[128]") {
-                            startActivity(Intent(activity, MainPageActivity::class.java));
+                            startActivity(Intent(activity, MainPageActivity::class.java))
+                            requireActivity().finish()
                         }
 
                     }
@@ -117,7 +119,7 @@ class LoginFragment : Fragment() {
         }
 
         _binding!!.btnSingUp.setOnClickListener {
-            startActivity(Intent(activity, MainPageActivity::class.java));
+            startActivity(Intent(activity, RegisterActivity::class.java));
         }
 
         return binding.root

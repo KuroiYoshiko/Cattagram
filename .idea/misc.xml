@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/activity_register.xml" value="0.1515625" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/activity_splash.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_main_page.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_register.xml" value="0.1515625" />
+        <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_register2.xml" value="0.1375" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/fragment_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/frame_news.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Kuroi/Desktop/Cattagram/app/src/main/res/layout/menu_bottom.xml" value="0.27291666666666664" />

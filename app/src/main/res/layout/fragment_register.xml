@@ -7,8 +7,7 @@
     android:background="@drawable/fragment_login_bg"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="26dp"
-    >
+    android:padding="26dp">
 
     <ImageView
         android:id="@+id/imageView2"
