@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.cattagram.R
+import com.example.cattagram.login.LoginActivity
 import com.example.cattagram.mainpage.MainPageActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -14,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler().postDelayed({
-            startActivity(Intent(this, MainPageActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         },3000)
