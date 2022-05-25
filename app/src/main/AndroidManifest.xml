@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Cattagram"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".profile.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".picture.ShowPictureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".picture.AddNewPictureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".likes.LikedPicturesActivity"
+            android:exported="false" />
+        <activity
             android:name=".search.SearchActivity"
             android:exported="false" />
         <activity
