@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.example.cattagram.databinding.FragmentMainPageBinding
 import com.example.cattagram.login.LoginActivity
 import com.example.cattagram.profile.ProfileActivity
+import com.example.cattagram.search.SearchActivity
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -37,6 +38,21 @@ class MainPageFragment : Fragment() {
 
         _binding!!.menuBottom.ivProfile.setOnClickListener {
             startActivity(Intent(activity, ProfileActivity::class.java))
+        }
+
+        _binding!!.menuBottom.ivHome.setOnClickListener {
+            startActivity(Intent(activity, MainPageActivity::class.java))
+            requireActivity().finish()
+        }
+
+        _binding!!.menuBottom.ivAdd.setOnClickListener {
+            startActivity(Intent(activity, MainPageActivity::class.java))
+            requireActivity().finish()
+        }
+
+        _binding!!.menuBottom.ivSearch.setOnClickListener {
+            startActivity(Intent(activity, SearchActivity::class.java))
+            requireActivity().finish()
         }
 
         return binding.root
