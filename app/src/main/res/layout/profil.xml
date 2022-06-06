@@ -10,7 +10,21 @@
     tools:context=".login.LoginFragment">
 
 
- <LinearLayout
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@android:drawable/ic_menu_edit" />
+    </ImageButton>
+
+    <LinearLayout
      android:layout_width="match_parent"
      android:layout_height="200dp"
      android:background="@drawable/fragment_login_bg"
@@ -23,7 +37,7 @@
          android:layout_gravity="center"
          android:layout_marginRight="5dp">
 
-     <ImageView
+         <ImageView
          android:id="@+id/imageView14"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -40,7 +54,7 @@
 
      </LinearLayout>
 
-     <Button
+        <Button
          android:layout_width="wrap_content"
          android:layout_height="80dp"
          android:layout_gravity="center"
@@ -76,53 +90,8 @@
             android:layout_marginTop="10dp"
             android:src="@drawable/ic_menu" />
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="196dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5sp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="196dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5sp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="196dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5sp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="196dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5sp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-
-
-        </LinearLayout>
-
+        <include layout="@layout/fragment_image"></include>
+        <include layout="@layout/fragment_image"></include>
 
     </LinearLayout>
 </LinearLayout>

@@ -8,11 +8,11 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
+    <string name="edit">Edit image profile</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="cattagram">Cattagram</string>
-    <string name="sing_in">Sing In</string>
+    <string name="sign_in">Sign In</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="enter_password">Enter Password</string>
     <string name="sign_in_with_email">Sign in with Username</string>
