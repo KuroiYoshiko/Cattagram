@@ -50,6 +50,31 @@
         <entry key="..\:/Users/User/StudioProjects/Cattagram/app/src/main/res/layout/menu_top.xml" value="0.1" />
         <entry key="..\:/Users/User/StudioProjects/Cattagram/app/src/main/res/layout/profil.xml" value="0.25" />
         <entry key="..\:/Users/User/StudioProjects/Cattagram/app/src/main/res/layout/search_layout.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_add.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_add_new_picture.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_edit.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_edit_profile.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_liked_pictures.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_profile.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_register.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/activity_search.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_add.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_add_new_picture.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_edit_prof.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_image.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_liked_pictures.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_login.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_profile.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_register.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_search.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/fragment_show_picture.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/frame_news.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/liked_picture.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/menu_bottom.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/menu_top.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/profil.xml" value="0.271286231884058" />
+        <entry key="..\:/Users/User/StudioProjects/Cattagram2/app/src/main/res/layout/search_layout.xml" value="0.271286231884058" />
       </map>
     </option>
   </component>

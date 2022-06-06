@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".picture.AddNewPictureFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/fragment_login_bg"
+android:gravity="center"
+android:orientation="vertical"
+android:padding="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_no"
+            android:layout_marginRight="90dp"/>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_yes"
+            android:layout_marginLeft="90dp"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="346dp"
+        android:layout_height="307dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/lapa" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/cardview_dark_background">>
 
-</FrameLayout>
+
+
+        <include layout="@layout/fragment_image"></include>
+        <include layout="@layout/fragment_image"></include>
+        <include layout="@layout/fragment_image"></include>
+
+    </LinearLayout>
+
+</LinearLayout>

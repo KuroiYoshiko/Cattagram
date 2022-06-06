@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".picture.AddNewPictureActivity">
 
+<include layout="@layout/fragment_add_new_picture"></include>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
