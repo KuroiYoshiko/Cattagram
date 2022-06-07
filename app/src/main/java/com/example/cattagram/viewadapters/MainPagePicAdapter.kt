@@ -1,15 +1,18 @@
 package com.example.cattagram.viewadapters
 
+
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-
 import android.widget.TextView
-
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cattagram.R
+import com.example.cattagram.picture.ShowPictureActivity
 import com.example.cattagram.retrofit.getOneImgResponse
 import com.squareup.picasso.Picasso
 
@@ -28,6 +31,10 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
 
     override fun onBindViewHolder(holder: MainPagePicAdapter.ViewHolder, position: Int) {
         Picasso.get().load(response[position].link).fit().into(holder.catPicture)
+        holder.commentsButton.setOnClickListener {
+            val intent = Intent(holder.con, ShowPictureActivity::class.java)
+            startActivity(holder.con, intent, null)
+        }
 
     }
 
@@ -41,6 +48,7 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
         var catPicture: ImageView
         var likeButton: Button
         var commentsButton: Button
+        var con: Context
 
         init {
             profilePicture = itemView.findViewById(R.id.profilePicIv)
@@ -48,6 +56,7 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
             catPicture = itemView.findViewById(R.id.pictureIv)
             likeButton = itemView.findViewById(R.id.btLikePic)
             commentsButton = itemView.findViewById(R.id.btComments)
+            con = itemView.context
         }
     }
 

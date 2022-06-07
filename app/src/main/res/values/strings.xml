@@ -28,4 +28,5 @@
     <string name="user_name1">User name</string>
     <string name="register_btn_msg">Register</string>
     <string name="birthdate_et">Birthdate</string>
+    <string name="comment_placeholder">Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder.</string>
 </resources>
