@@ -14,6 +14,7 @@ import com.example.cattagram.databinding.FragmentMainPageBinding
 import com.example.cattagram.picture.AddNewPictureActivity
 import com.example.cattagram.profile.ProfileActivity
 import com.example.cattagram.retrofit.Api
+import com.example.cattagram.retrofit.GetNewImagesResponse
 import com.example.cattagram.retrofit.GetOneImgResponse
 import com.example.cattagram.search.SearchActivity
 import com.example.cattagram.viewadapters.MainPagePicAdapter
@@ -88,12 +89,10 @@ class MainPageFragment : Fragment() {
 
         _binding!!.menuBottom.ivAdd.setOnClickListener {
             startActivity(Intent(activity, AddNewPictureActivity::class.java))
-            requireActivity().finish()
         }
 
         _binding!!.menuBottom.ivSearch.setOnClickListener {
             startActivity(Intent(activity, SearchActivity::class.java))
-            requireActivity().finish()
         }
 
         val retrofit = imgRequest()
@@ -116,9 +115,9 @@ class MainPageFragment : Fragment() {
                     val gson = Gson().newBuilder().serializeNulls().create()
                     val jsonArray = JSONArray(responseBodyString)
 
-                    var items = mutableListOf<GetOneImgResponse>()
+                    var items = mutableListOf<GetNewImagesResponse>()
                     for (i in 0 until jsonArray.length()) {
-                        val item = gson.fromJson(jsonArray[i].toString(), GetOneImgResponse::class.java)
+                        val item = gson.fromJson(jsonArray[i].toString(), GetNewImagesResponse::class.java)
                         items.add(i, item)
                     }
 

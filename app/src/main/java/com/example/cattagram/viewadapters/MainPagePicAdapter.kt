@@ -15,13 +15,14 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cattagram.R
 import com.example.cattagram.picture.ShowPictureActivity
+import com.example.cattagram.retrofit.GetNewImagesResponse
 import com.example.cattagram.retrofit.GetOneImgResponse
 import com.squareup.picasso.Picasso
 
 
 class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>() {
 
-    private var response = emptyList<GetOneImgResponse>()
+    private var response = emptyList<GetNewImagesResponse>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -33,11 +34,14 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
 
     override fun onBindViewHolder(holder: MainPagePicAdapter.ViewHolder, position: Int) {
         Picasso.get().load(response[position].link).fit().into(holder.catPicture)
+        holder.username.text = response[position].username
+        Picasso.get().load(response[position].avatar).fit().into(holder.profilePicture)
+        holder.likeCount.text = response[position].like.toString()
 
         holder.commentsButton.setOnClickListener {
             Log.d("Adapter", "IMG passed id: ${response[position].idZdjecia}, id pozycji: $position")
             val intent = Intent(holder.con, ShowPictureActivity::class.java)
-            var b = Bundle()
+            val b = Bundle()
             b.putInt("image_id", response[position].idZdjecia)
             intent.putExtras(b)
             startActivity(holder.con, intent, null)
@@ -55,6 +59,7 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
         var catPicture: ImageView
         var likeButton: Button
         var commentsButton: Button
+        var likeCount: TextView
         var con: Context
 
         init {
@@ -63,11 +68,12 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
             catPicture = itemView.findViewById(R.id.pictureIv)
             likeButton = itemView.findViewById(R.id.btLikePic)
             commentsButton = itemView.findViewById(R.id.btComments)
+            likeCount = itemView.findViewById(R.id.tvLikeCount)
             con = itemView.context
         }
     }
 
-    fun setData(newList: List<GetOneImgResponse>) {
+    fun setData(newList: List<GetNewImagesResponse>) {
         response = newList
         notifyDataSetChanged()
     }

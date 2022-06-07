@@ -32,5 +32,8 @@ interface Api {
     @POST("upload/comment")
     fun uploadComment(@Body body: RequestBody): Call<ResponseBody>
 
+    @POST("upload/like")
+    fun uploadLike(@Body body: RequestBody): Call<ResponseBody>
+
 
 }

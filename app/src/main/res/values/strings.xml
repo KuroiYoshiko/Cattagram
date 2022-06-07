@@ -30,4 +30,6 @@
     <string name="birthdate_et">Birthdate</string>
     <string name="comment_placeholder">Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder, Comment placeholder.</string>
     <string name="comments_empty">Be first to comment</string>
+    <string name="like_count_placeholder">123</string>
+    <string name="like">Like</string>
 </resources>
