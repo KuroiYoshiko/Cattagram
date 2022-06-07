@@ -29,5 +29,8 @@ interface Api {
     @POST("comments/get_comments")
     fun getComments(@Body body: RequestBody): Call<ResponseBody>
 
+    @POST("upload/comment")
+    fun uploadComment(@Body body: RequestBody): Call<ResponseBody>
+
 
 }

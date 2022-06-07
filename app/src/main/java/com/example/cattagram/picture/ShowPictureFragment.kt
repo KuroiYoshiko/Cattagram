@@ -166,7 +166,7 @@ class ShowPictureFragment : Fragment() {
                             commentsList.add(i, item)
                         }
 
-                        Log.d("COMMENTS SUCCESS", "JSON: ${commentsList[1]}")
+                        Log.d("COMMENTS SUCCESS", "JSON: ${commentsList[0]}")
 
                         layoutManager = LinearLayoutManager(context)
                         adapter.setData(commentsList)
@@ -186,6 +186,43 @@ class ShowPictureFragment : Fragment() {
             }
         })
 
+
+        _binding!!.btnAddComment.setOnClickListener {
+            val commentText = _binding!!.etComment.text.toString()
+
+            val requestBody2: RequestBody = MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("user_id", "135")
+                .addFormDataPart("img_id", "$param1")
+                .addFormDataPart("comment", "$commentText")
+                .build()
+
+            retrofit?.uploadComment(requestBody2)?.enqueue(object: Callback<ResponseBody> {
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    adapter.notifyDataSetChanged()
+                    var responseBodyString = response.body()!!.string()
+
+                    Log.d("UPLOAD SUCCESS", "response: $responseBodyString")
+
+                    if (responseBodyString == "{\"response\":200}") {
+                        _binding!!.etComment.text.clear()
+                        Toast.makeText(activity, "Successfully added comment", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        Toast.makeText(activity, "Server problems, try again later", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Toast.makeText(activity, "Server problems, try again later", Toast.LENGTH_SHORT).show()
+                    Log.d("UPLOAD SUCCESS", "Failed with $t")
+                }
+            })
+        }
 
         return binding.root
     }

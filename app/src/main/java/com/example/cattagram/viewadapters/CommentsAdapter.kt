@@ -57,24 +57,4 @@ class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.ViewHolder?>() {
         commentResponse = newCommentList
         notifyDataSetChanged()
     }
-
-    private fun userRequest(): Api? {
-
-        val client = OkHttpClient.Builder().addInterceptor { chain ->
-            val newRequest: Request = chain.request().newBuilder()
-                .addHeader("accept", "application / json")
-                .addHeader("Authorization", "Bearer 1234567asdfgh")
-                .build()
-            chain.proceed(newRequest)
-        }.build()
-
-        val retrofitBuilder = Retrofit.Builder()
-            .client(client)
-            .baseUrl("http://158.101.165.232:7000/")
-            .build()
-            .create(Api::class.java)
-
-
-        return retrofitBuilder
-    }
 }
