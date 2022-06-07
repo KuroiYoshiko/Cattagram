@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="10dp"
+    android:id="@+id/mainPageListItem"
     tools:context=".login.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,7 +88,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:backgroundTint="@color/ligthblue"
-            android:gravity="center"
+            android:text="Like"
             app:icon="@drawable/ic_like"
             app:layout_constraintLeft_toLeftOf="parent" />
         <Button
@@ -95,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
+            android:text="Comments"
             android:backgroundTint="@color/ligthblue"
             android:gravity="center"
             app:icon="@drawable/ic_com"
@@ -102,7 +104,7 @@
             />
         <Button
             android:id="@+id/btShare"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:backgroundTint="@color/ligthblue"
             android:gravity="center"

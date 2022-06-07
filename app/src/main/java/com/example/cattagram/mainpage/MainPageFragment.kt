@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cattagram.databinding.FragmentMainPageBinding
 import com.example.cattagram.profile.ProfileActivity
 import com.example.cattagram.retrofit.Api
 import com.example.cattagram.retrofit.getOneImgResponse
 import com.example.cattagram.search.SearchActivity
+import com.example.cattagram.viewadapters.MainPagePicAdapter
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import okhttp3.*
@@ -28,6 +31,10 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class MainPageFragment : Fragment() {
+
+    val adapter by lazy { MainPagePicAdapter() }
+    var layoutManager: RecyclerView.LayoutManager? = null
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -68,6 +75,7 @@ class MainPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = FragmentMainPageBinding.inflate(inflater, container, false)
 
         _binding!!.menuBottom.ivProfile.setOnClickListener {
@@ -109,10 +117,16 @@ class MainPageFragment : Fragment() {
                     val gson = Gson().newBuilder().serializeNulls().create()
                     val jsonArray = JSONArray(responseBodyString)
                     val item = gson.fromJson(jsonArray[0].toString(), getOneImgResponse::class.java)
+                    var items = listOf<getOneImgResponse>(item, item, item)
 
                     Log.d("IMG SUCCESS", "JSON: ${item.link}")
 
-                    Picasso.get().load(item.link).into(_binding!!.menuNews.pictureIv);
+                    layoutManager = LinearLayoutManager(context)
+                    adapter.setData(items)
+                    _binding!!.mainRV.adapter = adapter
+                    _binding!!.mainRV.layoutManager = layoutManager
+
+//                    Picasso.get().load(item.link).into(_binding!!.menuNews.pictureIv);
 
                 }
                 catch (e: NullPointerException){
@@ -133,6 +147,7 @@ class MainPageFragment : Fragment() {
 
         return binding.root
     }
+
 
     companion object {
         @JvmStatic
