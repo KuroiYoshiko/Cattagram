@@ -101,8 +101,6 @@ class MainPageFragment : Fragment() {
             .addFormDataPart("user_id", "1")
             .build()
 
-
-
         retrofit?.getNewImages(requestBody)?.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 try {
@@ -121,14 +119,12 @@ class MainPageFragment : Fragment() {
                         items.add(i, item)
                     }
 
-
-                    Log.d("IMG SUCCESS", "JSON: ${items[0]}")
+//                    Log.d("IMG SUCCESS", "JSON: ${items[0]}")
 
                     layoutManager = LinearLayoutManager(context)
                     adapter.setData(items)
                     _binding!!.mainRV.adapter = adapter
                     _binding!!.mainRV.layoutManager = layoutManager
-
                 }
                 catch (e: NullPointerException){
                     Log.d("IMG SUCCESS", "NullPointerException")

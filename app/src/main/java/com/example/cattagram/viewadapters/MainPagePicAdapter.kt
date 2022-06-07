@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cattagram.R
@@ -33,10 +34,16 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
     }
 
     override fun onBindViewHolder(holder: MainPagePicAdapter.ViewHolder, position: Int) {
-        Picasso.get().load(response[position].link).fit().into(holder.catPicture)
+        Picasso.get().load(response[position].link).rotate(90F).fit().into(holder.catPicture)
         holder.username.text = response[position].username
         Picasso.get().load(response[position].avatar).fit().into(holder.profilePicture)
         holder.likeCount.text = response[position].like.toString()
+        holder.shareButton.setOnClickListener {
+            Toast.makeText(holder.con, "Sharing images doesn't work yet, work in progress", Toast.LENGTH_SHORT).show()
+        }
+        holder.likeButton.setOnClickListener {
+            Toast.makeText(holder.con, "You now like ${response[position].username}'s picture", Toast.LENGTH_SHORT).show()
+        }
 
         holder.commentsButton.setOnClickListener {
             Log.d("Adapter", "IMG passed id: ${response[position].idZdjecia}, id pozycji: $position")
@@ -60,6 +67,7 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
         var likeButton: Button
         var commentsButton: Button
         var likeCount: TextView
+        var shareButton: Button
         var con: Context
 
         init {
@@ -69,6 +77,7 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
             likeButton = itemView.findViewById(R.id.btLikePic)
             commentsButton = itemView.findViewById(R.id.btComments)
             likeCount = itemView.findViewById(R.id.tvLikeCount)
+            shareButton = itemView.findViewById(R.id.btShare)
             con = itemView.context
         }
     }

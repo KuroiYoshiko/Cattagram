@@ -32,4 +32,5 @@
     <string name="comments_empty">Be first to comment</string>
     <string name="like_count_placeholder">123</string>
     <string name="like">Like</string>
+    <string name="description">Description</string>
 </resources>

@@ -30,7 +30,7 @@ class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.ViewHolder?>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Picasso.get().load(commentResponse[position].avatar).fit().into(holder.profilePicture)
+        Picasso.get().load(commentResponse[position].avatar).rotate(90f).fit().into(holder.profilePicture)
         holder.comment.text = commentResponse[position].comment
         holder.username.text = commentResponse[position].username
     }
