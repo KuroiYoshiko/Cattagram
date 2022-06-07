@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +14,7 @@ import com.example.cattagram.databinding.FragmentMainPageBinding
 import com.example.cattagram.picture.AddNewPictureActivity
 import com.example.cattagram.profile.ProfileActivity
 import com.example.cattagram.retrofit.Api
-import com.example.cattagram.retrofit.getOneImgResponse
+import com.example.cattagram.retrofit.GetOneImgResponse
 import com.example.cattagram.search.SearchActivity
 import com.example.cattagram.viewadapters.MainPagePicAdapter
 import com.google.gson.Gson
@@ -117,9 +116,9 @@ class MainPageFragment : Fragment() {
                     val gson = Gson().newBuilder().serializeNulls().create()
                     val jsonArray = JSONArray(responseBodyString)
 
-                    var items = mutableListOf<getOneImgResponse>()
+                    var items = mutableListOf<GetOneImgResponse>()
                     for (i in 0 until jsonArray.length()) {
-                        val item = gson.fromJson(jsonArray[0].toString(), getOneImgResponse::class.java)
+                        val item = gson.fromJson(jsonArray[i].toString(), GetOneImgResponse::class.java)
                         items.add(i, item)
                     }
 

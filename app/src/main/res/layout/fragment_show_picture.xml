@@ -7,12 +7,21 @@
     android:background="@drawable/fragment_login_bg"
     tools:context=".picture.ShowPictureFragment">
 
+    <include layout="@layout/menu_top"
+        android:id="@+id/menuTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsScroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/layoutComment"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/menuTop">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -57,21 +66,44 @@
             <ImageView
                 android:id="@+id/pictureIv"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="500dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/lapa"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/goToUserProfile"/>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <TextView
+                android:id="@+id/phComments"
                 android:layout_width="match_parent"
-                android:layout_height="1000dp"
+                android:layout_height="wrap_content"
+                android:text="Comments"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/pictureIv"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/noCommentsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/phComments">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comments_empty"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:nestedScrollingEnabled="false"
                 tools:listitem="@layout/comment_listitem"
-                app:layout_constraintTop_toBottomOf="@id/pictureIv"
+                app:layout_constraintTop_toBottomOf="@id/noCommentsLayout"
                 app:layout_constraintBottom_toBottomOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -80,14 +112,16 @@
         android:id="@+id/layoutComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/cat"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent">
+
         <EditText
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:id="@+id/etComment"
             android:layout_width="0dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:maxLength="250"
             android:layout_height="match_parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -99,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"
+            android:backgroundTint="@color/purple_700"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
