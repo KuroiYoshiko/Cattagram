@@ -8,6 +8,12 @@ import android.view.ViewGroup
 import com.example.cattagram.R
 import com.example.cattagram.databinding.FragmentMainPageBinding
 import com.example.cattagram.databinding.FragmentProfileBinding
+import com.example.cattagram.retrofit.Api
+import okhttp3.MultipartBody
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import retrofit2.Retrofit
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -19,6 +25,26 @@ class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+
+    private fun imgRequest(): Api? {
+
+        val client = OkHttpClient.Builder().addInterceptor { chain ->
+            val newRequest: Request = chain.request().newBuilder()
+                .addHeader("accept", "application / json")
+                .addHeader("Authorization", "Bearer 1234567asdfgh")
+                .build()
+            chain.proceed(newRequest)
+        }.build()
+
+        val retrofitBuilder = Retrofit.Builder()
+            .client(client)
+            .baseUrl("http://158.101.165.232:7000/")
+            .build()
+            .create(Api::class.java)
+
+
+        return retrofitBuilder
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +60,11 @@ class ProfileFragment : Fragment() {
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+        val retrofit = imgRequest()
+        val requestBody: RequestBody = MultipartBody.Builder()
+            .setType(MultipartBody.FORM)
+            .addFormDataPart("img_id", "4")
+            .build()
 
         return binding.root
     }
