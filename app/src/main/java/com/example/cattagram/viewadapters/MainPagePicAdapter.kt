@@ -27,7 +27,8 @@ class MainPagePicAdapter: RecyclerView.Adapter<MainPagePicAdapter.ViewHolder?>()
     }
 
     override fun onBindViewHolder(holder: MainPagePicAdapter.ViewHolder, position: Int) {
-        Picasso.get().load(response[position].link).fit().into(holder.catPicture);
+        Picasso.get().load(response[position].link).fit().into(holder.catPicture)
+
     }
 
     override fun getItemCount(): Int {

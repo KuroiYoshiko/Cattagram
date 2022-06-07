@@ -7,20 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cattagram.databinding.FragmentMainPageBinding
+import com.example.cattagram.picture.AddNewPictureActivity
 import com.example.cattagram.profile.ProfileActivity
 import com.example.cattagram.retrofit.Api
 import com.example.cattagram.retrofit.getOneImgResponse
 import com.example.cattagram.search.SearchActivity
 import com.example.cattagram.viewadapters.MainPagePicAdapter
 import com.google.gson.Gson
-import com.squareup.picasso.Picasso
 import okhttp3.*
 import org.json.JSONArray
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -88,7 +88,7 @@ class MainPageFragment : Fragment() {
         }
 
         _binding!!.menuBottom.ivAdd.setOnClickListener {
-            startActivity(Intent(activity, MainPageActivity::class.java))
+            startActivity(Intent(activity, AddNewPictureActivity::class.java))
             requireActivity().finish()
         }
 
@@ -100,12 +100,12 @@ class MainPageFragment : Fragment() {
         val retrofit = imgRequest()
         val requestBody: RequestBody = MultipartBody.Builder()
             .setType(MultipartBody.FORM)
-            .addFormDataPart("img_id", "26")
+            .addFormDataPart("user_id", "1")
             .build()
 
 
 
-        retrofit?.getOneImage(requestBody)?.enqueue(object : Callback<ResponseBody> {
+        retrofit?.getNewImages(requestBody)?.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 try {
                     var responseBodyString = response.body()!!.string()
@@ -116,17 +116,20 @@ class MainPageFragment : Fragment() {
 
                     val gson = Gson().newBuilder().serializeNulls().create()
                     val jsonArray = JSONArray(responseBodyString)
-                    val item = gson.fromJson(jsonArray[0].toString(), getOneImgResponse::class.java)
-                    var items = listOf<getOneImgResponse>(item, item, item)
 
-                    Log.d("IMG SUCCESS", "JSON: ${item.link}")
+                    var items = mutableListOf<getOneImgResponse>()
+                    for (i in 0 until jsonArray.length()) {
+                        val item = gson.fromJson(jsonArray[0].toString(), getOneImgResponse::class.java)
+                        items.add(i, item)
+                    }
+
+
+                    Log.d("IMG SUCCESS", "JSON: ${items[0]}")
 
                     layoutManager = LinearLayoutManager(context)
                     adapter.setData(items)
                     _binding!!.mainRV.adapter = adapter
                     _binding!!.mainRV.layoutManager = layoutManager
-
-//                    Picasso.get().load(item.link).into(_binding!!.menuNews.pictureIv);
 
                 }
                 catch (e: NullPointerException){
@@ -142,7 +145,6 @@ class MainPageFragment : Fragment() {
             }
         })
 
-//        _binding!!.mainRV.add
 
 
         return binding.root

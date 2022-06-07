@@ -6,5 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".profile.EditProfileActivity">
 
-    <include layout="@layout/fragment_edit_profile" ></include>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/editContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
@@ -9,47 +9,53 @@ android:gravity="center"
 android:orientation="vertical"
 android:padding="20dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivGoBack"
             android:layout_width="100dp"
             android:layout_height="40dp"
             app:srcCompat="@drawable/ic_no"
-            android:layout_marginRight="90dp"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/ivAcceptPicture"
             android:layout_width="100dp"
             android:layout_height="40dp"
             app:srcCompat="@drawable/ic_yes"
             android:layout_marginLeft="90dp"
-            />
-
-    </LinearLayout>
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="346dp"
-        android:layout_height="307dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/lapa" />
-
-    <LinearLayout
+        android:id="@+id/ivShowImage"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/lapa"
+        app:layout_constraintTop_toBottomOf="@id/buttonsLayout"
+        app:layout_constraintBottom_toTopOf="@id/btnSearchGallery"/>
+
+    <Button
+        android:id="@+id/btnSearchGallery"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/cardview_dark_background">>
+        android:text="Search gallery"
 
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-
-        <include layout="@layout/fragment_image"></include>
-        <include layout="@layout/fragment_image"></include>
-        <include layout="@layout/fragment_image"></include>
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

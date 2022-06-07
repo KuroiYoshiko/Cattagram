@@ -9,6 +9,7 @@ class MainPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
+        supportActionBar?.hide()
 
         supportFragmentManager.beginTransaction().add(R.id.mainPageContainer, MainPageFragment()).commit()
 
