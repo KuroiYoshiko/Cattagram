@@ -1,5 +1,6 @@
 package com.example.cattagram.picture
 
+import android.content.Context
 import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
@@ -80,6 +81,9 @@ class ShowPictureFragment : Fragment() {
             .setType(MultipartBody.FORM)
             .addFormDataPart("img_id", "$param1")
             .build()
+
+        val sharedPref = requireActivity().getSharedPreferences("shared", Context.MODE_PRIVATE)
+        val userId: Int = sharedPref.getInt("userId", -1)
 
         retrofit?.getOneImage(requestBody)?.enqueue(object: Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
@@ -192,7 +196,7 @@ class ShowPictureFragment : Fragment() {
 
             val requestBody2: RequestBody = MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("user_id", "135")
+                .addFormDataPart("user_id", "$userId")
                 .addFormDataPart("img_id", "$param1")
                 .addFormDataPart("comment", "$commentText")
                 .build()

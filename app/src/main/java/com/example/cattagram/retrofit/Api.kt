@@ -20,6 +20,9 @@ interface Api {
     @POST("images/get_new_images")
     fun getNewImages(@Body body: RequestBody): Call<ResponseBody>
 
+    @POST("images/get_user_images")
+    fun getUserImages(@Body body: RequestBody): Call<ResponseBody>
+
     @POST("images/get_user_details")
     fun getUserDetailsImage(@Body body: RequestBody): Call<ResponseBody>
 

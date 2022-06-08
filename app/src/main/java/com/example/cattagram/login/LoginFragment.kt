@@ -1,7 +1,9 @@
 package com.example.cattagram.login
 
 import android.R
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -53,6 +55,12 @@ class LoginFragment : Fragment() {
         return retrofitBuilder
     }
 
+    fun saveData(userId: Int) {
+        val sharedPref = activity?.getSharedPreferences("shared", Context.MODE_PRIVATE)
+        val editor = sharedPref?.edit()
+        editor?.putInt("userId", userId)
+        editor?.apply()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -109,6 +117,7 @@ class LoginFragment : Fragment() {
                     else {
                         val responseNumber = responseBodyString.drop(1).dropLast(1).toInt()
                         if (responseNumber > 0) {
+                            saveData(responseNumber)
                             startActivity(Intent(activity, MainPageActivity::class.java))
                             requireActivity().finish()
                         }

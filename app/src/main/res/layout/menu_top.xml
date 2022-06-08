@@ -10,7 +10,7 @@
     android:elevation="8dp"
     tools:context=".login.LoginFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:background="@drawable/fragment_login_bg"
@@ -21,9 +21,21 @@
             android:id="@+id/imageView8"
             android:layout_width="82dp"
             android:layout_height="76dp"
-            android:layout_weight="0"
-            android:src="@drawable/logo_kot" />
+            android:src="@drawable/logo_kot"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/logout"
+            android:layout_marginRight="5dp"
+            android:padding="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

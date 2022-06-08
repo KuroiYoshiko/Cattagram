@@ -1,5 +1,6 @@
 package com.example.cattagram.mainpage
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cattagram.databinding.FragmentMainPageBinding
+import com.example.cattagram.login.LoginActivity
 import com.example.cattagram.picture.AddNewPictureActivity
 import com.example.cattagram.profile.ProfileActivity
 import com.example.cattagram.retrofit.Api
@@ -77,6 +79,15 @@ class MainPageFragment : Fragment() {
     ): View? {
 
         _binding = FragmentMainPageBinding.inflate(inflater, container, false)
+
+        _binding!!.menuTop.logOut.setOnClickListener {
+            val sharedPref = activity?.getSharedPreferences("shared", Context.MODE_PRIVATE)
+            val editor = sharedPref?.edit()
+            editor?.putInt("userId", -1)
+            editor?.apply()
+            startActivity(Intent(activity, LoginActivity::class.java))
+            requireActivity().finish()
+        }
 
         _binding!!.menuBottom.ivProfile.setOnClickListener {
             startActivity(Intent(activity, ProfileActivity::class.java))

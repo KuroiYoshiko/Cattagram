@@ -1,6 +1,7 @@
 package com.example.cattagram.picture
 
 import android.app.Activity.RESULT_OK
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -76,6 +77,9 @@ class AddNewPictureFragment : Fragment() {
 
         _binding = FragmentAddNewPictureBinding.inflate(inflater, container, false)
 
+        val sharedPref = requireActivity().getSharedPreferences("shared", Context.MODE_PRIVATE)
+        val userId: Int = sharedPref.getInt("userId", -1)
+
         _binding!!.btnSearchGallery.setOnClickListener {
             val intent = Intent()
             intent.type = "image/*"
@@ -89,12 +93,14 @@ class AddNewPictureFragment : Fragment() {
             val retrofit = imgRequest()
             val requestBody: RequestBody = MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("image", file, RequestBody.create(MediaType
+                .addFormDataPart("image", "$file", RequestBody.create(MediaType
                     .parse("application/octet-stream"),
-                    File(filePath)))
-                .addFormDataPart("user_id", "135")
+                    File("$filePath")))
+                .addFormDataPart("user_id", "$userId")
                 .addFormDataPart("desc", descriptionText)
                 .build()
+
+            Log.d("UPLOAD", "FILE STUFF: $filePath, $file")
 
             retrofit?.uploadImage(requestBody)?.enqueue(object : Callback<ResponseBody> {
                 override fun onResponse(
@@ -115,7 +121,7 @@ class AddNewPictureFragment : Fragment() {
                         }
                     }
                     catch (e: NullPointerException){
-                        Log.d("UPLOAD SUCCESS", "NullPointerException, file:///$filePath")
+                        Log.d("UPLOAD SUCCESS", "NullPointerException, $filePath")
                         Toast.makeText(activity, "Server problems, try again later", Toast.LENGTH_SHORT).show()
                         Log.d("UPLOAD SUCCESS", "Failed with $response")
                     }
@@ -142,9 +148,10 @@ class AddNewPictureFragment : Fragment() {
 
             file = File(filePath).name
 
+
             val ivSelected: ImageView? = view?.findViewById(R.id.ivShowImage)
             ivSelected?.setImageURI(selectedImage)
-            Log.d("UPLOAD", "$filePath")
+
         }
 
     }
