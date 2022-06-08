@@ -1,97 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:layout_marginTop="65dp"
-    tools:context=".login.LoginFragment">
+    android:background="@color/white"
+    android:gravity="center">
 
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@android:drawable/ic_menu_edit" />
-    </ImageButton>
-
-    <LinearLayout
-     android:layout_width="match_parent"
-     android:layout_height="200dp"
-     android:background="@drawable/fragment_login_bg"
-     android:layout_marginBottom="10dp">
-
-     <LinearLayout
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:layout_marginRight="5dp">
-
-         <ImageView
-         android:id="@+id/imageView14"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_margin="10dp"
-         tools:srcCompat="@tools:sample/avatars"/>
-
-     <TextView
-         android:id="@+id/textView2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:text="@string/user_name1"
-         android:textSize="16dp"/>
-
-     </LinearLayout>
-
-        <Button
-         android:layout_width="wrap_content"
-         android:layout_height="80dp"
-         android:layout_gravity="center"
-         android:layout_marginRight="5dp"
-         android:backgroundTint="@color/orange"
-         android:text="@string/_0_n_obserwuj"></Button>
-
-     <Button
-         android:layout_gravity="center"
-         android:layout_width="wrap_content"
-         android:layout_height="80dp"
-         android:text="@string/_0_n_obserwuje"
-         android:backgroundTint="@color/orange">
-
-     </Button>
-
-
- </LinearLayout>
-
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:orientation="vertical"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/fragment_login_bg">
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@android:drawable/ic_menu_edit"/>
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="61dp"
-            android:layout_height="49dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_menu" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fragment_login_bg"
+                android:layout_marginBottom="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/btnEdit"
+                android:paddingRight="20dp">
 
-        <include layout="@layout/fragment_image"></include>
-        <include layout="@layout/fragment_image"></include>
+                <LinearLayout
+                    android:id="@+id/profLay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
-    </LinearLayout>
-</LinearLayout>
+                    <ImageView
+                        android:id="@+id/profPic"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/lapa" />
+
+                    <TextView
+                        android:id="@+id/profUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/user_name1"
+                        android:textSize="16dp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/theyFollowBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:backgroundTint="@color/orange"
+                    android:text="0 followers"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    app:layout_constraintRight_toLeftOf="@id/iFollowBT"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/iFollowBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="0 follow"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:backgroundTint="@color/orange"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profileRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/fragment_login_bg"
+                app:layout_constraintTop_toBottomOf="@id/lay"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
